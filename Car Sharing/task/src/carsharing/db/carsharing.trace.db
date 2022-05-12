@@ -1,0 +1,33 @@
+2022-03-17 20:13:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COMPANY" already exists; SQL statement:
+CREATE TABLE   COMPANY  (id INTEGER not NULL,  name VARCHAR(255),  PRIMARY KEY ( id )) [42101-200]
+2022-03-21 20:34:49 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "id" not found [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3195)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3268)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:352)
+	at carsharing.DatabaseManagment.getCarCompanyName(DatabaseManagment.java:216)
+	at carsharing.CustomerDaoImpl.rentedCarCompany(CustomerDaoImpl.java:57)
+	at carsharing.Main.customerRentedCar(Main.java:262)
+	at carsharing.Main.customerMenu(Main.java:248)
+	at carsharing.Main.customerList(Main.java:224)
+	at carsharing.Main.loginAsCustomer(Main.java:75)
+	at carsharing.Main.main(Main.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.invokeMain(MainMethodExecutor.java:172)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.lambda$launch$0(MainMethodExecutor.java:199)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-21 21:22:21 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * CUSTOMER[*] WHERE RENTED_CAR_ID IS NOT NULL"; SQL statement:
+SELECT * customer WHERE rented_car_id IS NOT NULL [42000-200]
